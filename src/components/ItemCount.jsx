@@ -5,8 +5,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
-export default function ItemCount({ stock }) {
-    const [cant, setCant] = useState(0);
+export default function ItemCount({valorInicial, stock }) {
+    const [cant, setCant] = useState(valorInicial);
 
     function resta() {
         if (cant > 0) {
