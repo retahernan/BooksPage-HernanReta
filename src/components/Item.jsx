@@ -11,7 +11,7 @@ export default function Item({ id, name, description, image, price }) {
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        height="140"
+                        height="240"
                         image={image}
                         alt="green iguana"
                     />
@@ -19,14 +19,14 @@ export default function Item({ id, name, description, image, price }) {
                         <Typography gutterBottom variant="h5" component="div">
                             {name}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        {/* <Typography variant="body2" color="text.secondary">
                             {description}
-                        </Typography>
+                        </Typography> */}
                         <Typography variant="body2" color="text.secondary">
                             $ {price}
                         </Typography>
                     </CardContent>
-                    <ItemCount valorInicial={2} stock={10} />
+                    <ItemCount valorInicial={0} stock={10} />
                 </CardActionArea>
             </Card>
         </>

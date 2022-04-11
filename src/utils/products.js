@@ -1,4 +1,4 @@
-const products = [{
+export const products = [{
     "id": 1,
     "name": "Machete",
     "description": "Fetal hematologic-unspec",
@@ -36,3 +36,15 @@ const products = [{
 }]
 
 export default products;
+
+export const product = {
+    "id": 5,
+    "name": "Mondo",
+    "description": "Tetanic cataract",
+    "image": "https://picsum.photos/200/300/?random",
+    "price": 70.5,
+    "stock": 5
+};
+
+
+

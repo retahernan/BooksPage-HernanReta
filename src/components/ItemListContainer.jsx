@@ -15,8 +15,8 @@ export default function ItemListContainer() {
   }, [products])
 
   return (
-      <div className={Style.listContainer}>
-        <ItemList products={items} />
-      </div>
+    <div className={Style.listContainer}>
+      <ItemList products={items} />
+    </div>
   );
 }
