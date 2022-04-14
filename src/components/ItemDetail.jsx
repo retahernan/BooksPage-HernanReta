@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "./ItemCount";
 import Style from "./ItemDetail.module.css";
 
 export default function ItemDetail({ product }) {
@@ -11,6 +12,7 @@ export default function ItemDetail({ product }) {
                 <h3>{product.description}</h3>
                 <h3>$ {product.price}</h3>
             </div>
+            <ItemCount valorInicial={0} stock={10} />
         </div>
 
 

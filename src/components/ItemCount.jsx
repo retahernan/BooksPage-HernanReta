@@ -5,7 +5,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
-export default function ItemCount({valorInicial, stock }) {
+export default function ItemCount({ valorInicial, stock }) {
     const [cant, setCant] = useState(valorInicial);
 
     function resta() {
@@ -26,16 +26,20 @@ export default function ItemCount({valorInicial, stock }) {
 
     return (
         <>
-            <IconButton onClick={resta} color="error" aria-label="remove to shopping cart">
-                <DeleteForeverIcon />
-            </IconButton>
-            <span>{cant}</span>
-            <IconButton onClick={suma} color="success" aria-label="add to shopping cart">
-                <AddShoppingCartIcon />
-            </IconButton>
-            <Button onClick={agrega} variant="contained" endIcon={<SendIcon />}>
-                Agregar
-            </Button>
+            <div>
+                <IconButton onClick={resta} color="error" aria-label="remove to shopping cart">
+                    <DeleteForeverIcon />
+                </IconButton>
+                <span>{cant}</span>
+                <IconButton onClick={suma} color="success" aria-label="add to shopping cart">
+                    <AddShoppingCartIcon />
+                </IconButton>
+            </div>
+            <div>
+                <Button onClick={agrega} variant="contained" endIcon={<SendIcon />}>
+                    Agregar
+                </Button>
+            </div>
         </>
     );
 }

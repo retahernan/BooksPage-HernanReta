@@ -3,14 +3,20 @@ import './App.css';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import MyNavBar from './components/MyNabVar';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 export default function App() {
   return (
     <>
-      <MyNavBar />
-      <ItemDetailContainer />
-      <ItemListContainer />
+      <BrowserRouter>
+        <MyNavBar />
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route exact path="/item/:Id" element={<ItemDetailContainer />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
