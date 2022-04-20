@@ -5,7 +5,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
-export default function ItemCount({ valorInicial, stock }) {
+export default function ItemCount({ valorInicial, stock, onAdd }) {
     const [cant, setCant] = useState(valorInicial);
 
     function resta() {
@@ -20,8 +20,9 @@ export default function ItemCount({ valorInicial, stock }) {
         }
     }
 
-    function agrega() {
-        alert(`Se agregaron ${cant} items al carrito`);
+    function reseteaContador() {
+        onAdd(cant);
+        setCant(0);
     }
 
     return (
@@ -36,7 +37,7 @@ export default function ItemCount({ valorInicial, stock }) {
                 </IconButton>
             </div>
             <div>
-                <Button onClick={agrega} variant="contained" endIcon={<SendIcon />}>
+                <Button onClick={reseteaContador} variant="contained" endIcon={<SendIcon />}>
                     Agregar
                 </Button>
             </div>

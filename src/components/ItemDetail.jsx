@@ -1,8 +1,17 @@
-import React from "react";
+import Button from '@mui/material/Button';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import Style from "./ItemDetail.module.css";
 
 export default function ItemDetail({ product }) {
+
+    const [cant, setCant] = useState(0)
+
+    const onAdd = (cant) => {
+        setCant(cant);
+    }
+
     return (
 
         <div className={Style.detail}>
@@ -12,8 +21,21 @@ export default function ItemDetail({ product }) {
                 <h3>{product.description}</h3>
                 <h3>$ {product.price}</h3>
             </div>
-            <ItemCount valorInicial={0} stock={10} />
+            <div>
+                {
+                    cant === 0 ? 
+                        <ItemCount valorInicial={0} stock={product.stock} onAdd={onAdd} /> : 
+                        <Button variant="outlined" ><Link style={{ textDecoration: 'none' }} to="/cart">Comprar</Link></Button>
+                }
+                
+            </div>
+            {/* <div>
+                <Button variant="outlined" >
+                    <Link style={{ textDecoration: 'none' }} to="/cart">Comprar</Link>
+                </Button>
+            </div> */}
         </div>
+
 
 
     );
