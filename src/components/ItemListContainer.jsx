@@ -14,7 +14,7 @@ export default function ItemListContainer() {
 
   useEffect(() => {
     setLoading(true);
-    customFetch(2000, 'C', products, categoryId)
+    customFetch(0, 'C', products, categoryId)
       .then(result => setItems(result))
       .catch(error => console.log(error))
       .finally(() => { setLoading(false); })

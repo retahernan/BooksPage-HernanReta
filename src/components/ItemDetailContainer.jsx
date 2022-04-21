@@ -12,7 +12,7 @@ export default function ItemDetailContainer() {
 
     useEffect(() => {
         setLoading(true);
-        customFetch(3000, 'I', products, Id)
+        customFetch(0, 'I', products, Id)
             .then(result => setItem(result))
             .catch(error => console.log(error))
             .finally(() => { setLoading(false); })
