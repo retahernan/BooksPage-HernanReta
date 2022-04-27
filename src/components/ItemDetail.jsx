@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button';
+import { flexbox } from '@mui/system';
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from './Context/CarContext';
@@ -9,11 +10,11 @@ export default function ItemDetail({ product }) {
 
     const [cant, setCant] = useState(0)
 
-    const {addItem} = useContext(Context)
+    const { addItem } = useContext(Context)
 
     const onAdd = (cant) => {
         setCant(cant);
-        addItem({...product, cant})
+        addItem({ ...product, cant })
     }
 
     return (
@@ -29,7 +30,10 @@ export default function ItemDetail({ product }) {
                 {
                     cant === 0 ?
                         <ItemCount valorInicial={0} stock={product.stock} onAdd={onAdd} /> :
-                        <Button variant="outlined" ><Link style={{ textDecoration: 'none' }} to="/cart">Comprar</Link></Button>
+                        (<div style={{display: 'inline' }}>
+                            <Button variant="outlined" ><Link style={{ textDecoration: 'none' }} to="/cart">Comprar</Link></Button>
+                            <Button variant="outlined" ><Link style={{ textDecoration: 'none' }} to="/">Seguir comprando</Link></Button>
+                        </div>)
                 }
 
             </div>
@@ -38,7 +42,7 @@ export default function ItemDetail({ product }) {
                     <Link style={{ textDecoration: 'none' }} to="/cart">Comprar</Link>
                 </Button>
             </div> */}
-        </div>
+        </div >
 
 
 
