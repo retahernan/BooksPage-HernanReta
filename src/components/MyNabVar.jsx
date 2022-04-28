@@ -96,12 +96,8 @@ const ResponsiveAppBar = () => {
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/">Home</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/Comedy">Comedy</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/Horror">Horror</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/Documentary">Documentary</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/Drama">Drama</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/Romance">Romance</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/Thriller">Thriller</Link>
+                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/cocina">Cocina</Link>
+                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/infantil">Infantil</Link>
                         </Box>
 
                         <Box sx={{ flexGrow: 0 }}>

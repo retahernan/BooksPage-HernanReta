@@ -41,8 +41,8 @@ export default function Cart() {
                         color="text.primary"
                       >
                         Cantidad = {prod.item.cant}  /
-                        Precio = {prod.item.price.toFixed(2)} /
-                        PrecioTotal = {prod.item.cant * prod.item.price.toFixed(2)}
+                        Precio = {prod.item.price} /
+                        PrecioTotal = {prod.item.cant * prod.item.price}
                       </Typography>
 
                     </React.Fragment>
@@ -66,7 +66,7 @@ export default function Cart() {
           <img src='./Assets/carritoVacio.jpg' /> :
           <List>
             <ListItem>
-              <h3>Cantidad Total de items : {totalCart} / Precio Total de la Compra : {priceCart.toFixed(2)}</h3>
+              <h3>Cantidad Total de items : {totalCart} / Precio Total de la Compra : {priceCart}</h3>
             </ListItem>
             <Divider variant="inset" component="li" />
           </List>

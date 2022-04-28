@@ -5,17 +5,31 @@ import customFetch from '../utils/customFetch';
 import products from '../utils/products';
 import ItemList from './ItemList';
 import Style from './ItemListContainer.module.css';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 export default function ItemListContainer() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const {categoryId} = useParams()
+  const { categoryId } = useParams()
 
   useEffect(() => {
+    const db = getFirestore();
+    let productsRef;
+console.log(categoryId);
+console.log(!categoryId);
+    if (!categoryId) {
+      console.log(1);
+      productsRef = collection(db, 'books')
+    } else {
+      console.log(2);
+      productsRef = query(collection(db, 'books'), where('category', '==', categoryId));
+    }
+
     setLoading(true);
-    customFetch(0, 'C', products, categoryId)
-      .then(result => setItems(result))
+
+    getDocs(productsRef)
+      .then(res => setItems(res.docs.map((item) => ({ id: item.id, ...item.data() }))))
       .catch(error => console.log(error))
       .finally(() => { setLoading(false); })
   }, [categoryId])

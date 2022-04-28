@@ -3,19 +3,24 @@ import ItemDetail from "./ItemDetail";
 import customFetch from '../utils/customFetch';
 import products from "../utils/products";
 import { useParams } from 'react-router-dom';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 export default function ItemDetailContainer() {
     const [item, setItem] = useState({});
     const [loading, setLoading] = useState(true);
 
-    const {Id} = useParams()
+    const { Id } = useParams()
 
     useEffect(() => {
+        const db = getFirestore();
+        const productRef = doc(db, 'books', Id);
+
         setLoading(true);
-        customFetch(0, 'I', products, Id)
-            .then(result => setItem(result))
+
+        getDoc(productRef)
+            .then(res => setItem({ id: res.id, ...res.data() }))
             .catch(error => console.log(error))
-            .finally(() => { setLoading(false); })
+            .finally(() => { setLoading(false); });
     }, [])
 
     return (
