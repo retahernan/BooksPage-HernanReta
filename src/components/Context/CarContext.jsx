@@ -26,6 +26,10 @@ export default function CartContext({ children }) {
         setCart([])
     }
 
+    function buy() {
+        setCart([])
+    }
+
     useEffect(() => {
         setTotalCart(cart.reduce((totalCart, cartItem) => totalCart += cartItem.item.cant, 0));
         setPriceCart(cart.reduce((priceCart, cartItem) => priceCart += (cartItem.item.cant * cartItem.item.price), 0));
@@ -33,7 +37,7 @@ export default function CartContext({ children }) {
 
     return (
         <>
-            <Context.Provider value={{ cart, setCart, addItem, removeItem, clear, totalCart, priceCart }}>
+            <Context.Provider value={{ cart, setCart, addItem, removeItem, clear, totalCart, priceCart, buy }}>
                 {children}
             </Context.Provider>
         </>

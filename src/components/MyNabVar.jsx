@@ -13,7 +13,7 @@ import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import Style from './MyNabVar.module.css';
 
-const pages = ['Comedy', 'Horror', 'Documentary', 'Drama', 'Romance', 'Thriller'];
+const pages = ['Cocina', 'Infantil'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -81,7 +81,9 @@ const ResponsiveAppBar = () => {
                             >
                                 {pages.map((page) => (
                                     <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
+                                        <Typography textAlign="center">
+                                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'black' }} to={`/category/${page.toLowerCase()}`}>{page}</Link>
+                                        </Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -92,12 +94,18 @@ const ResponsiveAppBar = () => {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                         >
-                            <img src="./Assets/logolibros.jpg" alt="" />
+                            <Link to="/"><img src="./Assets/logolibros.jpg" alt="" /></Link>
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/">Home</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/cocina">Cocina</Link>
-                            <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to="/category/infantil">Infantil</Link>
+                            {pages.map((page) => (
+                                <Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    <Link style={{ margin: '0px 10px', textDecoration: 'none', color: 'white' }} to={`/category/${page.toLowerCase()}`}>{page}</Link>
+                                </Button>
+                            ))}
                         </Box>
 
                         <Box sx={{ flexGrow: 0 }}>

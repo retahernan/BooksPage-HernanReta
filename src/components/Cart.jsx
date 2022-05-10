@@ -10,6 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -79,6 +80,13 @@ export default function Cart() {
         <Button variant="outlined" startIcon={<AddShoppingCartIcon />}>
           <Link style={{ textDecoration: 'none', color: '#1976d2' }} to="/">Seguir comprando</Link>
         </Button>
+        {cart.length > 0 ?
+          <Button variant="outlined" startIcon={<LocalMallIcon />}>
+            <Link style={{ textDecoration: 'none', color: '#1976d2' }} to="/FormCheckOut">Finalizar compra</Link>
+          </Button>
+          :
+          ""
+        }
       </div>
     </>
 
