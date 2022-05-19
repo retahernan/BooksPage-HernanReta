@@ -13,7 +13,7 @@ import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import Style from './MyNabVar.module.css';
 
-const pages = ['Cocina', 'Infantil'];
+const pages = ['Cocina', 'Infantil', 'Hogar', 'Computacion'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {

@@ -25,8 +25,6 @@ export default function ItemDetail({ product }) {
                 <h2>{product.name}</h2>
                 <h3>{product.description}</h3>
                 <h3>$ {product.price}</h3>
-            </div>
-            <div>
                 {
                     cant === 0 ?
                         <ItemCount valorInicial={0} stock={product.stock} onAdd={onAdd} /> :
