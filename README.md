@@ -33,7 +33,7 @@ Clonar, ingresar e instalar dependencias
 
 ```sh
 git clone https://github.com/retahernan/BooksPage-HernanReta.git
-cd monotienda-react
+cd bookspage
 npm install
 ```
 
