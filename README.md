@@ -14,8 +14,9 @@ El proyecto se encuentra desarrollado en React y conectado a Firebase.
 
 ## Librerías utilizadas
 
-- `React Icons`
+- `Material UI` para iconos, botones y estilos del sitio
 - `React Router Dom` para manejo de links y rutas del sitio.
+- `React Hook Form` para manejo del formulario de check out.
 - `Firebase` para manejo de base de datos.
 
 
@@ -42,3 +43,7 @@ Iniciar en servidor local
 ```sh
 npm start
 ```
+
+## Autor
+👤 `Hernán Reta`
+- Website: https://bookspage-bdl.web.app
